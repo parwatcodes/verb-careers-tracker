@@ -1,2 +1,8 @@
-venv/
-.env
+# Ignore python virtual envs and cache files.
+python-script/venv/
+python-script/__pycache__/
+python-script/jobs.json
+
+# Ignore Chrome extension build or packed files
+chrome-extension/build/
+chrome-extension/dist/
