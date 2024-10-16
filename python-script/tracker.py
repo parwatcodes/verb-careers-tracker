@@ -21,11 +21,16 @@ EMAIL_PASSWORD = os.getenv('EMAIL_PASSWORD')
 
 def fetch_job_postings(urls):
     jobs = []
+    print('urls', urls)
     for url in urls:
         response = requests.get(url)
         soup = BeautifulSoup(response.content, 'html.parser')
 
+        print(soup)
+
         job_elements = soup.find_all('li', { 'data-ui': 'job' })
+
+        print('job', job_elements)
 
         for job_element in job_elements:
             title = job_element.find('h3', {'data-ui': 'job-title'}).text.strip()

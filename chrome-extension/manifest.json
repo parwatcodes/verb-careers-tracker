@@ -3,13 +3,17 @@
   "name": "Verb Interactive Job Tracker",
   "version": "1.0",
   "description": "A simple Chrome extension tracks Verb job postings.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
   "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    }
+    "default_popup": "popup.html"
   },
-  "permissions": ["storage"]
+  "content_scripts": [
+    {
+      "matches": ["https://apply.workable.com/*"],
+      "js": ["content.js"]
+    }
+  ]
 }

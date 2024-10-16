@@ -2,6 +2,7 @@
 python-script/venv/
 python-script/__pycache__/
 python-script/jobs.json
+python-script/.env
 
 # Ignore Chrome extension build or packed files
 chrome-extension/build/
